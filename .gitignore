@@ -24,6 +24,15 @@ dist/
 *.json
 !requirements.txt
 
+# Testes e Debug
+debug_*.py
+teste_*.py
+test_*.py
+_check.py
+*test*.html
+comparacao_*.csv
+valores_cotacao_*.csv
+
 # IDE
 .vscode/
 .idea/
