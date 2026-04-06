@@ -692,11 +692,26 @@ def index():
 # ============================================================================
 
 if __name__ == '__main__':
+    import os
+    
     print("\n" + "="*60)
-    print("INICIANDO SERVIDOR WEB")
+    print("INICIANDO SERVIDOR WEB - FERRAMENTA DE GESTÃO")
     print("="*60)
-    print(f"Acesse em: http://localhost:5000")
+    
+    # Usar porta do Render (padrão 10000) ou 5000 localmente
+    port = int(os.environ.get('PORT', 5000))
+    is_production = os.environ.get('FLASK_ENV') == 'production'
+    
+    if is_production:
+        print("🚀 Modo PRODUÇÃO (Render)")
+        debug_mode = False
+    else:
+        print("🔧 Modo DESENVOLVIMENTO (Local)")
+        debug_mode = True
+    
+    print(f"Porta: {port}")
+    print(f"URL: http://localhost:{port}" if port == 5000 else f"Acessível publicamente")
     print(f"Presione CTRL+C para parar o servidor")
     print("="*60 + "\n")
     
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=debug_mode, host='0.0.0.0', port=port)
