@@ -1,0 +1,36 @@
+# Arquivos de configuração com credenciais sensíveis
+config.json
+
+# Cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Ambientes virtuais
+venv/
+ENV/
+env/
+
+# Build
+build/
+dist/
+*.spec
+
+# Dados temporários
+*.log
+*.csv
+*.json
+!requirements.txt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Sistema
+.DS_Store
+Thumbs.db
